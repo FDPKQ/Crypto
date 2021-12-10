@@ -154,7 +154,7 @@ def EnC(key, plaintext):
     else:
         add = 8 - (p_len % 8)
         num = int((p_len + add) / 8)
-    # 不足64位长度的分组用\0x32填充，因为\0x32为空格所以解密时不做处理
+    # 不足64位长度的分组用\0x20填充，因为\0x20为空格所以解密时不做处理
     p_add = bytes([32] * add)
     p = bytes(plaintext, encoding='utf8')
     p += p_add
